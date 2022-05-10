@@ -22,7 +22,7 @@ const calculateTimeLeft = () => {
     return timeLeft;
 }
 
-const HomePage = () => {
+const HomeScreen = () => {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -70,4 +70,4 @@ const styles = StyleSheet.create({
     }
   });
 
-  export default HomePage;
+  export default HomeScreen;

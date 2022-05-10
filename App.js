@@ -1,17 +1,26 @@
+// import React from 'react';
+// import { NavigationContainer } from '@react-navigation/native';
+// import HomeScreen from "./assets/screens/HomeScreen";
 
-import React from 'react';
+// const App = () => {
+//   return (
+//     <NavigationContainer>
+//       <HomeScreen />
+//     </NavigationContainer>
+//   );
+// };
 
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
-import HomePage from "./assets/pages/HomePage";
+// export default App;
 
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import TabsNavigation from './navigation/TabsNavigation';
 const App = () => {
   return (
-      <HomePage />
-  );
-};
+    <NavigationContainer>
+      <TabsNavigation />
+    </NavigationContainer>
+  )
+}
 
 export default App;
