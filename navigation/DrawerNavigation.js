@@ -6,6 +6,7 @@ import ScheduleScreen from '../assets/screens/ScheduleScreen';
 import FAQScreen from '../assets/screens/FAQScreen';
 import BoatInfoScreen from '../assets/screens/BoatInfoScreen';
 import FavoritesScreen from '../assets/screens/FavoritesScreen';
+import ArtistScreen from '../assets/screens/ArtistScreen';
 import CustomDrawer from '../assets/components/CustomDrawer';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -73,6 +74,9 @@ const DrawerNavigation = () => {
                 )
             }}        
         />
+        <Drawer.Screen name="Artist" component={ArtistScreen}   options={{
+            drawerItemStyle: { height: 0 }
+        }}/>
       </Drawer.Navigator>
   );
 }

@@ -1,17 +1,43 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {ScrollView, Text, TouchableOpacity, View, StyleSheet} from 'react-native';
+
+const filterSchedule = (date) => {
+    console.log(date);
+}
 
 const ScheduleScreen = () => {
     return (
         <View style={styles.page}>
-            <Text style={styles.text}>Schedule Screen</Text>
+            <View style={styles.buttonRow}> 
+                <TouchableOpacity style={styles.button} onPress={() => filterSchedule('2/6')}>
+                    <Text>2 / 6</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => filterSchedule('2/7')}>
+                    <Text>2 / 7</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => filterSchedule('2/8')}>
+                    <Text>2 / 8</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => filterSchedule('2/9')}>
+                    <Text>2 / 9</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => filterSchedule('2/10')}>
+                    <Text>2 / 10</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => filterSchedule('2/11')}>
+                    <Text>2 / 11</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => filterSchedule('2/12')}>
+                    <Text>2 / 12</Text>
+                </TouchableOpacity>                                                                                                
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     page: {
-        paddingTop: 50,
+        paddingTop: 15,
         height: '100%',
         width: '100%',
         backgroundColor: 'black',
@@ -19,12 +45,23 @@ const styles = StyleSheet.create({
         justifyContent: 'flex-start',
         flex: 1,
     },
-    text: {
-        textAlign: 'center',
-        fontSize: 25,
-        marginTop: 10,
-        color: '#169eba',
+    buttonRow:{
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+    },
+    button: {
+        backgroundColor: "#169eba",
+        paddingTop: 10,
+        paddingBottom: 10,
+        paddingLeft: 16,
+        paddingRight: 16,
+        color: 'black',
+        fontSize: 20,
         fontWeight: 'bold',
+        marginHorizontal: 10,
+        borderRadius: 12,
+        marginBottom: 10
     }
   });
 

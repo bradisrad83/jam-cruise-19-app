@@ -1,6 +1,10 @@
 import React from 'react';
-import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
+import {View, Text, StyleSheet, Image, Dimensions, TouchableWithoutFeedback} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import ArtistScreen from '../screens/ArtistScreen';
+import { NavigationContainer, createNavigationContainerRef } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 MaterialIcons.loadFont();
 
 const windowWidth = Dimensions.get('window').width;
@@ -9,12 +13,17 @@ const ArtistListItem = (artist) => {
     let source = artist.artist.imageUrl;
     return (
         <View style={styles.list}>
-            <Image source={source} style={styles.image}/>
-            <Text style={styles.text}>{artist.artist.name}</Text>
+            <TouchableWithoutFeedback>
+                <Image source={source} style={styles.image} />
+            </TouchableWithoutFeedback>
+            <TouchableWithoutFeedback>
+                <Text style={styles.text}>{artist.artist.name}</Text>
+            </TouchableWithoutFeedback>
             <MaterialIcons style={styles.favorite} name={'star-outline'} size={25} color={'#169eba'} />
         </View>
     );
 }
+
 
 const styles = StyleSheet.create({
     list: { 
@@ -45,4 +54,4 @@ const styles = StyleSheet.create({
     }
   });
 
-export default ArtistListItem;
+  export default ArtistListItem;

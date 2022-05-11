@@ -1,11 +1,11 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, ScrollView, Image, Dimensions} from 'react-native';
 
-const BandScreen = () => {
+const ArtistScreen = (artist) => {
     return (
-        <View style={styles.page}>
-            <Text style={styles.text}>Band Screen</Text>
-        </View>
+        <ScrollView style={styles.page}>
+            <Text style={styles.text}>Arist Screen</Text>
+        </ScrollView>
     )
 }
 
@@ -28,4 +28,4 @@ const styles = StyleSheet.create({
     }
   });
 
-  export default BandScreen;
+  export default ArtistScreen;
