@@ -1,20 +1,10 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList} from 'react-native';
-import Artists from '../Artists';
-import ArtistListItem from '../components/ArtistListItem';
+import {View, Text, StyleSheet} from 'react-native';
 
-const DATA = Artists.artists;
-
-const LineupScreen = () => {
+const FavoritesScreen = () => {
     return (
         <View style={styles.page}>
-            <FlatList 
-                data={DATA}
-                renderItem={({item}) =>
-                    <ArtistListItem artist={item} />
-                }
-                keyExtractor={item => item.id}
-            />
+            <Text style={styles.text}>Favorites Screen</Text>
         </View>
     )
 }
@@ -38,4 +28,4 @@ const styles = StyleSheet.create({
     }
   });
 
-  export default LineupScreen;
+  export default FavoritesScreen;
