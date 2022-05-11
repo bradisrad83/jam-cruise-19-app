@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {Image, View, Text, StyleSheet} from 'react-native';
+import {Image, View, Text, StyleSheet, Dimensions} from 'react-native';
 
 const image = require('../images/jc19.jpeg');
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const calculateTimeLeft = () => {
     const difference = +new Date('02/06/2023 03:00:00PM') - +new Date();
@@ -47,8 +49,8 @@ const HomeScreen = () => {
 const styles = StyleSheet.create({
     page: {
         paddingTop: 50,
-        height: '100%',
-        width: '100%',
+        height: windowHeight ,
+        width: windowWidth,
         backgroundColor: 'black',
         alignItems: 'center',
         justifyContent: 'flex-start',
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
     },
     image: {
         height: 250,
-        width: 320,
+        width: windowWidth * .85
     },
     time: {
         marginTop: 20,

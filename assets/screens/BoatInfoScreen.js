@@ -1,31 +1,49 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {ScrollView, Text, View, Image, StyleSheet, Dimensions} from 'react-native';
+
+const image = require('../images/divina.jpg');
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const BoatInfoScreen = () => {
     return (
-        <View style={styles.page}>
-            <Text style={styles.text}>Boat Info Screen</Text>
-        </View>
+        <ScrollView>
+            <View style={styles.comments}>
+                <Text style={styles.text}>$ = not free</Text>
+                <Text style={styles.text}>The 7th deck walkway is great to get from the front to back quickly</Text>
+                <Text style={styles.text}>Elevator up, stairs down</Text>
+                <Text style={styles.text}>Sweets area on 6 is where you'll find gelato</Text>
+            </View>
+            <ScrollView horizontal style={styles.page}>
+                <Image source={image} />
+            </ScrollView>
+        </ScrollView>
     )
 }
 
 const styles = StyleSheet.create({
     page: {
-        paddingTop: 50,
-        height: '100%',
-        width: '100%',
         backgroundColor: 'black',
-        alignItems: 'center',
-        justifyContent: 'flex-start',
-        flex: 1,
+    },
+    comments: {
+        paddingTop: 10,
+        paddingBottom: 20,
+        backgroundColor: 'black',
+        padding: 4,
     },
     text: {
-        textAlign: 'center',
-        fontSize: 25,
-        marginTop: 10,
-        color: '#169eba',
+        fontSize: 16,
         fontWeight: 'bold',
-    }
+        color: '#169eba',
+        marginTop: 8,
+        marginBottom: 8,
+    },
+    image: {
+        flex: 1,
+        width: '100%',
+        height: '100%',
+        resizeMode: 'contain',
+    },
   });
 
   export default BoatInfoScreen;
