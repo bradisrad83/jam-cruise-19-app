@@ -19,7 +19,9 @@ const ArtistListItem = (artist) => {
             <TouchableWithoutFeedback>
                 <Text style={styles.text}>{artist.artist.name}</Text>
             </TouchableWithoutFeedback>
-            <MaterialIcons style={styles.favorite} name={'star-outline'} size={25} color={'#169eba'} />
+            <TouchableWithoutFeedback>
+                <MaterialIcons style={styles.favorite} name={'star-outline'} size={25} color={'#169eba'} />
+            </TouchableWithoutFeedback>
         </View>
     );
 }

@@ -74,9 +74,6 @@ const DrawerNavigation = () => {
                 )
             }}        
         />
-        <Drawer.Screen name="Artist" component={ArtistScreen}   options={{
-            drawerItemStyle: { height: 0 }
-        }}/>
       </Drawer.Navigator>
   );
 }
