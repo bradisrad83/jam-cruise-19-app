@@ -22,7 +22,7 @@ const DrawerNavigation = () => {
       <Drawer.Navigator 
         initialRouteName="Home"
         screenOptions={({ route }) => ({
-            headerStyle: {backgroundColor: 'black'},
+            headerStyle: {backgroundColor: '#000'},
             headerTitleStyle: {color: '#169eba', fontSize: 20},
             drawerLabelStyle: {fontSize: 15, marginLeft: -13},
             drawerActiveBackgroundColor: '#003f4d',

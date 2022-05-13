@@ -12,14 +12,14 @@ const windowWidth = Dimensions.get('window').width;
 const ArtistListItem = (artist) => {
     let source = artist.artist.imageUrl;
     return (
-        <View style={styles.list}>
+        <View style={artist.artist.id % 2 ? styles.listOdd : styles.listEven}>
             <TouchableWithoutFeedback>
                 <Image source={source} style={styles.image} />
             </TouchableWithoutFeedback>
             <TouchableWithoutFeedback>
                 <Text style={styles.text}>{artist.artist.name}</Text>
             </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback onPress={() => addOrRemoveFavorites(artist.artist.id)}>
                 <MaterialIcons style={styles.favorite} name={'star-outline'} size={25} color={'#169eba'} />
             </TouchableWithoutFeedback>
         </View>
@@ -28,12 +28,25 @@ const ArtistListItem = (artist) => {
 
 
 const styles = StyleSheet.create({
-    list: { 
+    listEven: { 
         paddingTop: 10,
         paddingBottom: 10,
+        paddingLeft: 4,
         flexDirection: 'row',
         alignItems: 'center',
         width: windowWidth,
+        backgroundColor: '#00333f',
+        borderRadius: 20    ,
+    },
+    listOdd: { 
+        paddingTop: 10,
+        paddingBottom: 10,
+        paddingLeft: 4,
+        flexDirection: 'row',
+        alignItems: 'center',
+        width: windowWidth,
+        backgroundColor: '#000',
+        borderRadius: 20,
     },
     text: {
         fontSize: 15,

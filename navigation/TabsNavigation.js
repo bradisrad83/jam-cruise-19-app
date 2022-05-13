@@ -50,9 +50,9 @@ const TabsNavigation = () => {
           },
           tabBarActiveTintColor: '#f24738',
           tabBarInactiveTintColor: '#169eba',
-          tabBarLabelStyle: {fontSize: 12, fontWeight: 'bold', backgroundColor: 'black'},
-          tabBarStyle: {backgroundColor: 'black'},
-          headerStyle: {backgroundColor: 'black'},
+          tabBarLabelStyle: {fontSize: 12, fontWeight: 'bold', backgroundColor: '#000'},
+          tabBarStyle: {backgroundColor: '#000'},
+          headerStyle: {backgroundColor: '#000'},
           headerTitleStyle: {color: '#f24738', fontSize: 20}
         })}      
       >

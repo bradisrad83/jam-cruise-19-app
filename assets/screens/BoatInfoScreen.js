@@ -23,12 +23,12 @@ const BoatInfoScreen = () => {
 
 const styles = StyleSheet.create({
     page: {
-        backgroundColor: 'black',
+        backgroundColor: '#000',
     },
     comments: {
         paddingTop: 10,
         paddingBottom: 20,
-        backgroundColor: 'black',
+        backgroundColor: '#000',
         padding: 4,
     },
     text: {
