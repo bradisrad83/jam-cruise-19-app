@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#000',
     },
     comments: {
-        paddingTop: 10,
+        paddingTop: 75,
         paddingBottom: 20,
         backgroundColor: '#000',
         padding: 4,

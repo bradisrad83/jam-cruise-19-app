@@ -4,14 +4,13 @@ import Artists from '../Artists';
 import ArtistListItem from '../components/ArtistListItem';
 
 const DATA = Artists.artists;
-
-const LineupScreen = () => {
+const LineupScreen = ({navigation}) => {
     return (
         <View style={styles.page}>
             <FlatList 
                 data={DATA}
                 renderItem={({item}) =>
-                    <ArtistListItem artist={item} />
+                    <ArtistListItem artist={item}  />
                 }
                 keyExtractor={item => item.id}
             />
@@ -21,7 +20,7 @@ const LineupScreen = () => {
 
 const styles = StyleSheet.create({
     page: {
-        paddingTop: 50,
+        paddingTop: 75,
         height: '100%',
         width: '100%',
         backgroundColor: '#000',

@@ -11,7 +11,7 @@ const FAQScreen = () => {
 
 const styles = StyleSheet.create({
     page: {
-        paddingTop: 50,
+        paddingTop: 75,
         height: '100%',
         width: '100%',
         backgroundColor: '#000',

@@ -1,25 +1,29 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image, Dimensions, TouchableWithoutFeedback} from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import ArtistScreen from '../screens/ArtistScreen';
-import { NavigationContainer, createNavigationContainerRef } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
 
 MaterialIcons.loadFont();
 
 const windowWidth = Dimensions.get('window').width;
-
-const ArtistListItem = (artist) => {
-    let source = artist.artist.imageUrl;
+function addOrRemoveFavorites(id) {
+    console.log('icon has been pressed');
+    console.log(id);
+}
+const ArtistListItem = (props) => {
+    const navigation = useNavigation(); 
+    let artist = props.artist;
+    let source = artist.imageUrl;
     return (
-        <View style={artist.artist.id % 2 ? styles.listOdd : styles.listEven}>
+        <View style={artist.id % 2 ? styles.listOdd : styles.listEven}>
             <TouchableWithoutFeedback>
                 <Image source={source} style={styles.image} />
             </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback>
-                <Text style={styles.text}>{artist.artist.name}</Text>
+            {/* <TouchableWithoutFeedback onPress={() => navigation.navigate('Artist', {params: {screen: 'ArtistScreen', params: {artist}}})}> */}
+            <TouchableWithoutFeedback onPress={() => navigation.navigate('Artist', {params: {artist}})}>
+                <Text style={styles.text}>{artist.name}</Text>
             </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback onPress={() => addOrRemoveFavorites(artist.artist.id)}>
+            <TouchableWithoutFeedback onPress={() => addOrRemoveFavorites(artist.id)}>
                 <MaterialIcons style={styles.favorite} name={'star-outline'} size={25} color={'#169eba'} />
             </TouchableWithoutFeedback>
         </View>

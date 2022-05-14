@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import DrawerNavigation from './navigation/DrawerNavigation';
+import TabsNavigation from './navigation/TabsNavigation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Artists from './assets/Artists';
 
@@ -34,7 +35,7 @@ const App = () => {
   getData();
   return (
     <NavigationContainer>
-      <DrawerNavigation />
+      <TabsNavigation />
     </NavigationContainer>
   )
 }

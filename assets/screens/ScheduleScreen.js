@@ -37,7 +37,7 @@ const ScheduleScreen = () => {
 
 const styles = StyleSheet.create({
     page: {
-        paddingTop: 15,
+        paddingTop: 75,
         height: '100%',
         width: '100%',
         backgroundColor: '#000',

@@ -74,6 +74,13 @@ const DrawerNavigation = () => {
                 )
             }}        
         />
+        <Drawer.Screen name="Artist" component={ArtistScreen} 
+            options={{
+                drawerIcon: () => (
+                    <MaterialIcons name={'star-outline'} size={20} color={'#169eba'} />
+                )
+            }}        
+        />        
       </Drawer.Navigator>
   );
 }

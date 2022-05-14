@@ -5,8 +5,9 @@ const image = require('../images/jc19.jpeg');
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
+const sailDate = new Date('02/06/2023 03:00:00PM');
 const calculateTimeLeft = () => {
-    const difference = +new Date('02/06/2023 03:00:00PM') - +new Date();
+    const difference = +sailDate - +new Date();
     let timeLeft = {
         days: 0, 
         hours: 0,
@@ -26,12 +27,13 @@ const calculateTimeLeft = () => {
 
 const HomeScreen = () => {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setTimeLeft(calculateTimeLeft());
-        }, 1000);
-        return () => clearTimeout(timer);
-    });
+    // let departure = timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0;
+        useEffect(() => {
+            const timer = setTimeout(() => {
+                    setTimeLeft(calculateTimeLeft());
+            }, 1000);
+            return () => clearTimeout(timer);
+        });
     return (
         <View style={styles.page}>
             <Image style={styles.image} source={image} />
@@ -48,7 +50,7 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
     page: {
-        paddingTop: 50,
+        paddingTop: 75,
         height: windowHeight ,
         width: windowWidth,
         backgroundColor: '#000',
