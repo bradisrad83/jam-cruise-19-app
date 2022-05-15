@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import {Image, View, Text, StyleSheet} from 'react-native';
+import {Image, View, Text, StyleSheet, Dimensions} from 'react-native';
 
 const image = require('../images/jc19.jpeg');
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
+const sailDate = new Date('02/06/2023 03:00:00PM');
 const calculateTimeLeft = () => {
-    const difference = +new Date('02/06/2023 03:00:00PM') - +new Date();
+    const difference = +sailDate - +new Date();
     let timeLeft = {
         days: 0, 
         hours: 0,
@@ -22,14 +25,15 @@ const calculateTimeLeft = () => {
     return timeLeft;
 }
 
-const HomePage = () => {
+const HomeScreen = () => {
     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setTimeLeft(calculateTimeLeft());
-        }, 1000);
-        return () => clearTimeout(timer);
-    });
+    // let departure = timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0;
+        useEffect(() => {
+            const timer = setTimeout(() => {
+                    setTimeLeft(calculateTimeLeft());
+            }, 1000);
+            return () => clearTimeout(timer);
+        });
     return (
         <View style={styles.page}>
             <Image style={styles.image} source={image} />
@@ -46,17 +50,17 @@ const HomePage = () => {
 
 const styles = StyleSheet.create({
     page: {
-        paddingTop: 50,
-        height: '100%',
-        width: '100%',
-        backgroundColor: 'black',
+        paddingTop: 75,
+        height: windowHeight ,
+        width: windowWidth,
+        backgroundColor: '#000',
         alignItems: 'center',
         justifyContent: 'flex-start',
         flex: 1,
     },
     image: {
         height: 250,
-        width: 320,
+        width: windowWidth * .85
     },
     time: {
         marginTop: 20,
@@ -70,4 +74,4 @@ const styles = StyleSheet.create({
     }
   });
 
-  export default HomePage;
+  export default HomeScreen;

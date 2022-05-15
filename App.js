@@ -1,17 +1,43 @@
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import DrawerNavigation from './navigation/DrawerNavigation';
+import TabsNavigation from './navigation/TabsNavigation';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import Artists from './assets/Artists';
 
-import React from 'react';
+const getData = async () => {
+  try {
+    const value = await AsyncStorage.getItem('@favorites')
+    if(!value) { 
+      const artists = Artists.artists.map((artist) => {
+        return {
+          "id": artist.id,
+          "favorite": false,
+        }
+      });
+      storeData(JSON.stringify(artists));
+    }
+  } catch(e) {
+    console.log('error exists');
+  }
+}
 
-import {
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
-import HomePage from "./assets/pages/HomePage";
+const storeData = async (value) => {
+  try {
+    await AsyncStorage.setItem('@favorites', value)
+  } catch (e) {
+    // saving error
+  }
+}
+
 
 const App = () => {
+  getData();
   return (
-      <HomePage />
-  );
-};
+    <NavigationContainer>
+      <TabsNavigation />
+    </NavigationContainer>
+  )
+}
 
 export default App;
